@@ -21,7 +21,7 @@ export default function ModalResult({ closemodal }) {
                 runninganimation = false
             }, 1250);
         }
-        navigator.clipboard.writeText(`box-state : ${getboxshadowvalue(shadowvalues)}`)
+        navigator.clipboard.writeText(`box-shadow : ${getboxshadowvalue(shadowvalues)}`)
     }
 
 
