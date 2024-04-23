@@ -3,7 +3,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = [
     {
         inputnumber: 1,
-        name: "Border radius",
+        name: "Border-radius",
         value: 25,
         type: "range",
         minmax: [0, 250],

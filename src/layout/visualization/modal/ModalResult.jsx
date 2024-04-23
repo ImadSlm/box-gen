@@ -1,10 +1,12 @@
 import { useEffect } from "react"
 import getboxshadowvalue from "../../../utils/getboxshadowvalue"
+import getboxvalue from "../../../utils/getboxvalue"
 import { useSelector } from "react-redux"
 
 export default function ModalResult({ closemodal }) {
     const shadowvalues = useSelector((state) => state.shadows)
-
+    const boxvalues = useSelector((state) => state.boxproperties)
+    
     useEffect(() => {
         document.body.style.overflow = "hidden"
         return () => document.body.style.overflow = "auto"
@@ -21,7 +23,7 @@ export default function ModalResult({ closemodal }) {
                 runninganimation = false
             }, 1250);
         }
-        navigator.clipboard.writeText(`box-shadow : ${getboxshadowvalue(shadowvalues)}`)
+        navigator.clipboard.writeText(`box-shadow : ${getboxshadowvalue(shadowvalues)} \n${getboxvalue(boxvalues)}`)
     }
 
 
@@ -41,9 +43,11 @@ export default function ModalResult({ closemodal }) {
                         Close
                     </button>
                 </div>
-                <p className="rounded bg-gray-100 p-5">
-                    <span className="font-semibold">box-shadow : </span>
-                    <span>{getboxshadowvalue(shadowvalues)}</span>
+                <p className="rounded bg-gray-100 p-10">
+                    <span className="font-semibold"><u>box-shadow :</u> </span>
+                    <span>{getboxshadowvalue(shadowvalues)}<br></br></span>
+                    <span className="font-semibold"><u>box panel :</u> </span>
+                    <span>{getboxvalue(boxvalues)}</span>
                 </p>
             </div>
         </div>
