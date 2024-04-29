@@ -21,7 +21,7 @@ export default function ModalResult({ closemodal }) {
             setTimeout(() => {
                 e.target.textContent = "Copy"
                 runninganimation = false
-            }, 1250);
+            }, 1000);
         }
         navigator.clipboard.writeText(`box-shadow : ${getboxshadowvalue(shadowvalues)} \n${getboxvalue(boxvalues)}`)
     }
@@ -33,7 +33,7 @@ export default function ModalResult({ closemodal }) {
                 onClick={(e) => e.stopPropagation()}
                 className="max-w-[400px] rounded p-7 bg-gray-50 mb-[10vh]">
                 <div className="flex items-end mb-5">
-                    <p className="font-semibold mr-5">Here is your code !</p>
+                    <p className="font-semibold mr-5">Here is your code 🎉</p>
                     <button onClick={handlecopy} className="ml-auto mr-2 text-sm bg-blue-600 text-white hover:bg-blue-800 py-1 px-3 rounded">
                         Copy
                     </button>
@@ -43,10 +43,10 @@ export default function ModalResult({ closemodal }) {
                         Close
                     </button>
                 </div>
-                <p className="rounded bg-gray-100 p-10">
-                    <span className="font-semibold"><u>box-shadow :</u> </span>
+                <p className="rounded font-mono text-gray-200 bg-gray-900 p-10">
+                    <span className="font-semibold">box-shadow : </span>
                     <span>{getboxshadowvalue(shadowvalues)}<br></br></span>
-                    <span className="font-semibold"><u>box panel :</u> </span>
+                    <span className="font-semibold">box panel : </span>
                     <span>{getboxvalue(boxvalues)}</span>
                 </p>
             </div>
